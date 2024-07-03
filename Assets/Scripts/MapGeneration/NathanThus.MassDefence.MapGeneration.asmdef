@@ -1,0 +1,14 @@
+{
+    "name": "NathanThus.MassDefence.MapGeneration",
+    "rootNamespace": "NathanThus.MassDefence.MapGeneration",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,16 @@
+{
+    "name": "NathanThus.MassDefence.MapGeneration.Editor",
+    "rootNamespace": "NathanThus.MassDefence.MapGeneration.Editor",
+    "references": [
+        "NathanThus.MassDefence.MapGeneration"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
