@@ -1,0 +1,62 @@
+{
+    "name": "MassDefenceInputActions",
+    "maps": [
+        {
+            "name": "Mouse Left-Click",
+            "id": "a79edb00-8960-41e9-b4b6-167d670c0a98",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "a2ecf303-2e0f-4e9d-b80c-71e66691592a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "a2ae6c7d-4193-4375-8bc5-c00b531e9344",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Mouse Right-Click",
+            "id": "ceec8ef3-73e4-45e7-bdb9-3fbd4d34477d",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "48461d08-2dcc-4a9f-a31e-2a86cde1ed7c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "d63fb520-8ae4-4aad-ae5b-3b0decc8f31a",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
