@@ -1,7 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 namespace NathanThus.MassDefence.Input
@@ -46,6 +44,20 @@ namespace NathanThus.MassDefence.Input
 
         #endregion
 
+        #region Public
+
+        public void Enable()
+        {
+            enabled = true;
+        }
+
+        public void Disable()
+        {
+            enabled = false;
+        }
+
+        #endregion
+
         #region Private
         private void HandleRightMouseClick(InputAction.CallbackContext _)
         {
@@ -53,6 +65,11 @@ namespace NathanThus.MassDefence.Input
 
         private void HandleLeftMouseClick(InputAction.CallbackContext _)
         {
+            if(EventSystem.current.IsPointerOverGameObject())
+            {
+                return;
+            }
+            
             var mousePos = Mouse.current.position.ReadValue();
             if (!Physics.Raycast(_camera.ScreenPointToRay(new Vector3(mousePos.x, mousePos.y)),
                                 out RaycastHit hit,
@@ -61,7 +78,7 @@ namespace NathanThus.MassDefence.Input
                 return;
             }
 
-            Destroy(hit.collider.gameObject);
+            Debug.Log(hit.collider.gameObject.name);
         }
 
         #endregion
