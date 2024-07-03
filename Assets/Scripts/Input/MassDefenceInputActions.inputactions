@@ -2,13 +2,22 @@
     "name": "MassDefenceInputActions",
     "maps": [
         {
-            "name": "Mouse Left-Click",
-            "id": "a79edb00-8960-41e9-b4b6-167d670c0a98",
+            "name": "Tower Selection",
+            "id": "a40a2a43-1654-47c3-aace-83623e9904b5",
             "actions": [
                 {
-                    "name": "New action",
+                    "name": "Left Mouse",
                     "type": "Button",
-                    "id": "a2ecf303-2e0f-4e9d-b80c-71e66691592a",
+                    "id": "681a74c0-547b-4570-bac0-fab119986ecc",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Right Mouse",
+                    "type": "Button",
+                    "id": "30921fe7-1ec6-4b92-a6da-ac81128e714f",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -18,45 +27,45 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "a2ae6c7d-4193-4375-8bc5-c00b531e9344",
+                    "id": "bd59e820-0233-452f-999a-f0a25f99fe82",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "New action",
+                    "groups": "Keyboard & Mouse",
+                    "action": "Left Mouse",
                     "isComposite": false,
                     "isPartOfComposite": false
-                }
-            ]
-        },
-        {
-            "name": "Mouse Right-Click",
-            "id": "ceec8ef3-73e4-45e7-bdb9-3fbd4d34477d",
-            "actions": [
-                {
-                    "name": "New action",
-                    "type": "Button",
-                    "id": "48461d08-2dcc-4a9f-a31e-2a86cde1ed7c",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                }
-            ],
-            "bindings": [
+                },
                 {
                     "name": "",
-                    "id": "d63fb520-8ae4-4aad-ae5b-3b0decc8f31a",
+                    "id": "fe4561d8-1233-4379-948a-89a777d63f53",
                     "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "New action",
+                    "groups": "Keyboard & Mouse",
+                    "action": "Right Mouse",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
             ]
         }
     ],
-    "controlSchemes": []
+    "controlSchemes": [
+        {
+            "name": "Keyboard & Mouse",
+            "bindingGroup": "Keyboard & Mouse",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Mouse>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
 }
