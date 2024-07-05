@@ -10,12 +10,12 @@ public class MapGeneratorEditor : Editor {
         GUILayout.BeginHorizontal();
         if(GUILayout.Button("Update Map"))
         {
-            (target as MapGenerator).UpdatePlates();
+            (target as MapGenerator).UpdateTiles();
         }
 
         if(GUILayout.Button("Clear Map"))
         {
-            (target as MapGenerator).ClearPlates();
+            (target as MapGenerator).ClearTiles();
         }
 
         GUILayout.EndHorizontal();
