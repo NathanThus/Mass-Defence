@@ -75,11 +75,13 @@ namespace NathanThus.MassDefence.MapGeneration
         private void CreateEndTile(Transform endTile, int x, int y)
         {
             _goalTile = CreateTile(endTile,x,y);
+            _goalTile.parent = transform;
         }
 
         private void CreateStartTile(Transform startTile, int x, int y)
         {
             _startTile = CreateTile(startTile,x,y);
+            _startTile.parent = transform;
         }
 
         private Transform CreateTile(Transform tile, int x, int y)
