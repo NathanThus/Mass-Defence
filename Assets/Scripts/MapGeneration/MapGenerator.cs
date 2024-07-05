@@ -21,6 +21,19 @@ namespace NathanThus.MassDefence.MapGeneration
 
         #endregion
 
+        #region Fields
+
+        private Transform _startTile;
+        private Transform _goalTile;
+
+        #endregion
+
+        #region Properties
+        public Transform StartTile => _startTile;
+        public Transform GoalTile => _goalTile;
+
+        #endregion
+
         #region Public
 
         public void UpdateTiles()
@@ -43,27 +56,40 @@ namespace NathanThus.MassDefence.MapGeneration
                 {
                     if (x == startPos.x && y == startPos.y)
                     {
-                        CreateTile(_startPrefab, x, y);
+                        CreateStartTile(_startPrefab, x, y);
                     }
                     else if (x == endPos.x && y == endPos.y)
                     {
-                        CreateTile(_goalPrefab, x, y);
+                        CreateEndTile(_goalPrefab, x, y);
                     }
                     else
                     {
-                        CreateTile(_basicTile, x, y);
+                        _ = CreateTile(_basicTile, x, y);
                     }
                 }
             }
 
-            void CreateTile(Transform tile, int x, int y)
-            {
-                var plate = Instantiate(tile,
-                                        new Vector3(x * _spacing, 0, y * _spacing),
-                                        Quaternion.identity,
-                                        _plateHolder);
-                _tiles.Add(plate);
-            }
+
+        }
+
+        private void CreateEndTile(Transform endTile, int x, int y)
+        {
+            _goalTile = CreateTile(endTile,x,y);
+        }
+
+        private void CreateStartTile(Transform startTile, int x, int y)
+        {
+            _startTile = CreateTile(startTile,x,y);
+        }
+
+        private Transform CreateTile(Transform tile, int x, int y)
+        {
+            var newTile = Instantiate(tile,
+                                    new Vector3(x * _spacing, 0, y * _spacing),
+                                    Quaternion.identity,
+                                    _plateHolder);
+            _tiles.Add(newTile);
+            return newTile;
         }
 
         public void ClearTiles()
