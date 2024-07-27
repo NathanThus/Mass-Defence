@@ -5,7 +5,6 @@ namespace NathanThus.MassDefence.Enemy
 {
     public class EnemyAuthoring : MonoBehaviour
     {
-
         class Baker : Baker<EnemyAuthoring>
         {
             public override void Bake(EnemyAuthoring authoring)

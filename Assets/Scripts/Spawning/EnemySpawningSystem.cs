@@ -20,7 +20,6 @@ namespace NathanThus.MassDefence.Spawning
         [BurstCompile]
         public void OnUpdate(ref SystemState state)
         {
-            Debug.Log("Update!");
             state.Enabled = false; // Run Only Once.
             _waveConfig = SystemAPI.GetSingleton<WaveConfig>();
             for (int i = 0; i < _waveConfig.Enemies; i++)
@@ -29,6 +28,12 @@ namespace NathanThus.MassDefence.Spawning
             }
 
             int posOffset = 0;
+
+            Demo(posOffset, ref state);
+        }
+
+        private void Demo(int posOffset, ref SystemState state)
+        {
             foreach (var (transform, entity) in
                     SystemAPI.Query<RefRW<LocalTransform>>()
                     .WithAll<Enemy.Enemy>()
@@ -47,9 +52,9 @@ namespace NathanThus.MassDefence.Spawning
                     posOffset
                 );
 
-                Debug.Log(transform.ValueRO.Position);
                 posOffset++;
             }
+
         }
     }
 }

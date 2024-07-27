@@ -1,3 +1,4 @@
+using NathanThus.MassDefence.MapGeneration;
 using Unity.Entities;
 using UnityEngine;
 
@@ -5,10 +6,11 @@ namespace NathanThus.MassDefence.Spawning
 {
     public class WaveAuthoring : MonoBehaviour
     {
-        // [SerializeField] private Transform _start;
-        // [SerializeField] private Transform _goal;
         [SerializeField] private GameObject _enemyPrefab;
         [SerializeField] private int _enemies;
+        [SerializeField] private WaveScriptableObject _waveObject;
+
+        private WaveConfig _waveConfig;
 
         class Baker : Baker<WaveAuthoring>
         {
@@ -17,8 +19,7 @@ namespace NathanThus.MassDefence.Spawning
                 var entity = GetEntity(authoring, TransformUsageFlags.Dynamic);
                 AddComponent(entity, new WaveConfig
                 {
-                    // Start = authoring._start.position,
-                    // Goal = authoring._start.position,
+                    WaveObject = authoring._waveObject,
                     EnemyPrefab = GetEntity(authoring._enemyPrefab, TransformUsageFlags.Dynamic),
                     Enemies = authoring._enemies
                 });
@@ -28,8 +29,7 @@ namespace NathanThus.MassDefence.Spawning
 
     public struct WaveConfig : IComponentData
     {
-        public Vector3 Start;
-        public Vector3 Goal;
+        public WaveScriptableObject WaveObject;
         public Entity EnemyPrefab;
         public int Enemies;
     }
